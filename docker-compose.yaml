@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: titanic-api
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    environment:
+      - MLFLOW_TRACKING_URI=file:/app/mlruns
+      - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
